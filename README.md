@@ -17,12 +17,12 @@ iosutils is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'iosutils'
+    pod 'iosutils', :git => 'https://github.com/mzalih/iosutils.git'
 ```
 
 ## Author
 
-salih, mzalih@gmail.com
+mzalih  mzalih@gmail.com
 
 ## License
 
