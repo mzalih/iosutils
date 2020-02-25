@@ -13,14 +13,14 @@
 
 /* Begin PBXFileReference section */
 		13EA9583D58B2ECDC0EA674E /* Pods_iosutils_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosutils_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4799CD60294E6E7E0DC98A2C /* iosutils.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = iosutils.podspec; path = ../iosutils.podspec; sourceTree = "<group>"; };
+		4799CD60294E6E7E0DC98A2C /* iosutils.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = iosutils.podspec; path = ../iosutils.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		607FACE51AFB9204008FA782 /* iosutils_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosutils_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9EDBDF79507CF10534774742 /* Pods-iosutils_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosutils_Tests.debug.xcconfig"; path = "Target Support Files/Pods-iosutils_Tests/Pods-iosutils_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B4EFCF3CD053C1F36410ADD8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B4EFCF3CD053C1F36410ADD8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E52C6820EF13682794063292 /* Pods-iosutils_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosutils_Tests.release.xcconfig"; path = "Target Support Files/Pods-iosutils_Tests/Pods-iosutils_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F38AC6A1BD8AB8D53721CD94 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F38AC6A1BD8AB8D53721CD94 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,13 +41,20 @@
 				9EDBDF79507CF10534774742 /* Pods-iosutils_Tests.debug.xcconfig */,
 				E52C6820EF13682794063292 /* Pods-iosutils_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A1BF9BD2404F49000A27ADC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				4A1BF9BD2404F49000A27ADC /* Utils */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -131,10 +138,6 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0900;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0900;
@@ -147,6 +150,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
