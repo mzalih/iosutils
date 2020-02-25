@@ -12,7 +12,7 @@ class MNotification{
         notificationContent.title = title
         notificationContent.subtitle = subtitle
         notificationContent.body = body
-        notificationContent.sound = UNNotificationSound.default()
+        notificationContent.sound = UNNotificationSound.default
 
         // Add Trigger
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
@@ -28,3 +28,4 @@ class MNotification{
         }
     }
 }
+
