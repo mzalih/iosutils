@@ -22,7 +22,7 @@ pod 'iosutils'
 
 ## Author
 
-jerrydon, salih@toobler.com
+mzalih  mzalih@gmail.com
 
 ## License
 
