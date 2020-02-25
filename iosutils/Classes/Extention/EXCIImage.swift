@@ -1,11 +1,11 @@
 
 import UIKit
-
+import CoreImage
 extension CIContext {
     static let shared = CIContext(options: nil)
 }
-extension CIImage {
-  func toUIImage() -> UIImage? {
+public extension CIImage {
+    func toUIImage() -> UIImage? {
     let context: CIContext = CIContext.init(options: nil)
 
     if let cgImage: CGImage = context.createCGImage(self, from: self.extent) {
@@ -14,28 +14,15 @@ extension CIImage {
       return nil
     }
   }
-func toCGImage() -> CGImage? {
+    func toCGImage() -> CGImage? {
         let context = CIContext.shared
         if let cgImage = context.createCGImage(self, from: self.extent) {
             return cgImage
         }
         return nil
 }
-        var averageLuminance: Double {
-            let vector = CIVector(cgRect: extent)
-            let filter = CIFilter(name: "CIAreaAverage", parameters: [kCIInputImageKey: self, kCIInputExtentKey: vector])!
-            var bitmap = [UInt8](repeating: 0, count: 4)
-
-            CIContext.shared.render(filter.outputImage!, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: CIFormat.RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
-
-            let r = (Double(bitmap[0]) / 255) * 0.213
-            let g = (Double(bitmap[1]) / 255) * 0.715
-            let b = (Double(bitmap[2]) / 255) * 0.072
-
-            return (r + g + b)
-        }
 }
-extension UIImage{
+public extension UIImage{
     func crop(rect: CGRect) -> UIImage? {
       guard let cropped = self.cgImage?.cropping(to: rect) else {
         return nil
@@ -43,7 +30,7 @@ extension UIImage{
       return UIImage(cgImage: cropped, scale: self.scale, orientation: self.imageOrientation)
     }
 }
-extension UIImage {
+public extension UIImage {
     /// Creates a UIImage from the specified CIImage.
     static func from(ciImage: CIImage) -> UIImage {
         if let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent) {

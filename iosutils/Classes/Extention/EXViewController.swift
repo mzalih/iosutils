@@ -1,7 +1,7 @@
 
 import UIKit
 
-func getTopView()->UIViewController?{
+public func getTopView()->UIViewController?{
     if let window = UIApplication.shared.keyWindow {
         if let viewController = window.topViewController() {
             return viewController;
@@ -9,7 +9,7 @@ func getTopView()->UIViewController?{
     }
     return nil
 }
-func getRootView()->UIViewController?{
+public func getRootView()->UIViewController?{
     if let window = UIApplication.shared.keyWindow {
         if let viewController = window.rootViewController{
             return viewController;
@@ -17,13 +17,13 @@ func getRootView()->UIViewController?{
     }
     return nil
 }
-func getVC(_ storyboard:String ,_ identifier :String? = nil)->UIViewController{
+public func getVC(_ storyboard:String ,_ identifier :String? = nil)->UIViewController{
     if let usableIdentifier = identifier{
         return  UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: usableIdentifier);
     }
     return  UIStoryboard(name: storyboard, bundle: nil).instantiateInitialViewController() ?? UIViewController();
 }
-extension UIViewController{
+public extension UIViewController{
     @IBAction func  dismiss(_ sender: Any? = nil) {
         self.dismiss(animated: true);
     }
@@ -40,7 +40,7 @@ extension UIViewController{
         self.navigationController?.popToRootViewController(animated: animated)
     }
 }
-extension UIViewController{
+public extension UIViewController{
     
     func rootNaviagation()->UINavigationController?{
        

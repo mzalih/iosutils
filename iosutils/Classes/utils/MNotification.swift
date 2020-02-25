@@ -1,9 +1,9 @@
 import Foundation
 import UserNotifications
-class MNotification{
+public class MNotification{
 
     @available(iOS 10.0, *)
-    static func scheduleLocalNotification(title:String, subtitle:String, body: String) {
+    public static func scheduleLocalNotification(title:String, subtitle:String, body: String) {
 
         // Create Notification Content
         let notificationContent = UNMutableNotificationContent()
@@ -12,8 +12,7 @@ class MNotification{
         notificationContent.title = title
         notificationContent.subtitle = subtitle
         notificationContent.body = body
-        notificationContent.sound = UNNotificationSound.default
-
+       
         // Add Trigger
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
 

@@ -1,28 +1,28 @@
 
 import Foundation
 var userDefaults = UserDefaults()
-class Defaults: NSObject {
+public  class Defaults: NSObject {
     
     
-    static func setString(value:String?,key:String){
+  public   static func setString(value:String?,key:String){
        userDefaults.set(value, forKey: key)
        userDefaults.synchronize()
     }
     
-    static func removeString(key:String)
+    public static func removeString(key:String)
     {
         userDefaults.removeObject(forKey: key)
         //  Save to disk
         userDefaults.synchronize()
     
     }
-    static func setArray(value:Array<Any>,key:String){
+    public static func setArray(value:Array<Any>,key:String){
         userDefaults.set(value, forKey: key)
         //  Save to disk
         userDefaults.synchronize()
     }
 
-    static func getArray(key:String)->Array<Any>?{
+   public  static func getArray(key:String)->Array<Any>?{
         if userDefaults.object(forKey: key) == nil {
             //  Doesn't exist
             return nil;
@@ -36,7 +36,7 @@ class Defaults: NSObject {
     }
     
     
-    static func getString(key:String)->String?{
+  public   static func getString(key:String)->String?{
         if userDefaults.object(forKey: key) == nil {
             //  Doesn't exist
             return nil;
@@ -45,13 +45,13 @@ class Defaults: NSObject {
             return currentLevel!;
         }
     }
-    static func setData(value:Data ,key:String){
+    public static func setData(value:Data ,key:String){
         userDefaults.set(value,forKey: key)
         //  Save to disk
         userDefaults.synchronize()
     }
     
-    static func getData(key:String)->Data?{
+    public static func getData(key:String)->Data?{
         if userDefaults.object(forKey: key) == nil {
             //  Doesn't exist
             return nil;
@@ -63,13 +63,13 @@ class Defaults: NSObject {
             return nil;
         }
     }
-    static func setBool(value:Bool?,key:String){
+   public  static func setBool(value:Bool?,key:String){
         userDefaults.set(value, forKey: key)
         //  Save to disk
         userDefaults.synchronize()
     }
     
-    static func getBool(key:String)->Bool{
+   public  static func getBool(key:String)->Bool{
         if userDefaults.object(forKey: key) == nil {
             //  Doesn't exist
             return false;
@@ -79,7 +79,7 @@ class Defaults: NSObject {
         }
     }
 }
-extension UserDefaults{
+public extension UserDefaults{
     static func clear(){
         if let bundleID = Bundle.main.bundleIdentifier {
                         UserDefaults.standard.removePersistentDomain(forName: bundleID)

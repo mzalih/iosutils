@@ -1,6 +1,6 @@
 
 import Foundation
-extension Date{
+public extension Date{
     func formatDate(_ format:String ,_ gmt:Bool = false) -> String {
         
         let dateFormatterPrint = DateFormatter()
@@ -132,19 +132,19 @@ extension Date{
         }
     }
 }
-struct DateFormat{
-    static let FULL = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-    static let DATE_WEEKDAY = "EEEE, MMM d"
-    static let DATE_TIME = "MMM d, yyyy h:mm a"
-    static let DATE_DISPLAY = "MMM d, yyyy"
-    static let DATE_MMDDYYYY = "MM/dd/yyyy"
-    static let DATE_MONTH_DAY = "MMM dd"
-    static let DATE_YYYYMMDD = "yyyy-MM-dd"
-    static let TIME = "hh:mm a"
-    static let TIME_EXCEPT_MERIDIAN = "hh:mm"
-    static let TIME_MERIDIEM = "a"
-    static let TIME_24_FORMAT = "HH:mm"
-    static let CARD_EXPIRY = "MM/YY"
-    static let NUMERIC_DDMMYY = "ddMMyy"
-    static let NUMERIC_YYMMDD = "yyMMdd"
+public struct DateFormat{
+    public static let FULL = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    public static let DATE_WEEKDAY = "EEEE, MMM d"
+    public static let DATE_TIME = "MMM d, yyyy h:mm a"
+    public static let DATE_DISPLAY = "MMM d, yyyy"
+    public static let DATE_MMDDYYYY = "MM/dd/yyyy"
+    public static let DATE_MONTH_DAY = "MMM dd"
+    public static let DATE_YYYYMMDD = "yyyy-MM-dd"
+    public static let TIME = "hh:mm a"
+    public static let TIME_EXCEPT_MERIDIAN = "hh:mm"
+    public static let TIME_MERIDIEM = "a"
+    public static let TIME_24_FORMAT = "HH:mm"
+    public static let CARD_EXPIRY = "MM/YY"
+    public static let NUMERIC_DDMMYY = "ddMMyy"
+    public static let NUMERIC_YYMMDD = "yyMMdd"
 }

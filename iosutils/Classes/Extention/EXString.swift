@@ -5,7 +5,7 @@ import func CommonCrypto.CC_MD5
 import typealias CommonCrypto.CC_LONG
 import Photos
 
-extension String{
+public extension String{
     func replace(target: String, with: String) -> String {
         return self.replacingOccurrences(of: target, with: with, options: .literal, range: nil)
     }

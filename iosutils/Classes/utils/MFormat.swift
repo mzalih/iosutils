@@ -1,4 +1,4 @@
 import Foundation
-class MFormat{
+public class MFormat{
  
 }

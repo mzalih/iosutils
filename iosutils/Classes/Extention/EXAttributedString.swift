@@ -2,7 +2,7 @@
 
 import UIKit
 
-extension NSMutableAttributedString{
+public extension NSMutableAttributedString{
     func setColorForText(_ textToFind: String?, with color: UIColor) {
 
         let range:NSRange?
@@ -23,7 +23,7 @@ extension NSMutableAttributedString{
             range = NSMakeRange(0, self.length)
         }
         if range!.location != NSNotFound {
-            addAttribute(NSAttributedString.Key.underlineStyle, value:NSUnderlineStyle.thick.rawValue, range: range!)
+            addAttribute(NSAttributedString.Key.underlineStyle, value:NSUnderlineStyle.styleThick.rawValue, range: range!)
             addAttribute(NSAttributedString.Key.underlineColor, value:color , range: range!)
         }
     }

@@ -1,6 +1,6 @@
 
 import UIKit
-extension UIView {
+public extension UIView {
     func clickDelay(delayTime:Double){
         self.isUserInteractionEnabled = false
         delay(delayTime) {

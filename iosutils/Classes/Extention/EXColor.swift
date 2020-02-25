@@ -2,14 +2,14 @@
 
 import UIKit
 
-enum ColorValues{
+public enum ColorValues{
     case RED
     case GREEN
     case BLUE
     case ALPHA
 }
 
-extension UIColor {
+public extension UIColor {
     /**
      Creates an UIColor from HEX String in "#363636" format
      
@@ -17,7 +17,7 @@ extension UIColor {
      
      - returns: UIColor from HexString
      */
-    convenience init(hexString: String) {
+    public convenience init(hexString: String) {
         
         let hexString: String = (hexString as NSString).trimmingCharacters(in: .whitespacesAndNewlines)
         let scanner          = Scanner(string: hexString as String)
@@ -42,7 +42,7 @@ extension UIColor {
     }
     
 }
-extension UIColor {
+public extension UIColor {
       func toHexString() -> String {
           var r:CGFloat = 0
           var g:CGFloat = 0

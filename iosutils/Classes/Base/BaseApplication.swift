@@ -1,10 +1,10 @@
 
 import UIKit
 
-@objc(BaseApplication) class BaseApplication: UIApplication {
+@objc(BaseApplication) public class BaseApplication: UIApplication {
     
     
-    func containsEndTouch(_ event: UIEvent)->Bool{
+    public func containsEndTouch(_ event: UIEvent)->Bool{
         for touch in event.allTouches ?? []{
             if(touch.phase == UITouch.Phase.ended){
                 return true
@@ -12,7 +12,7 @@ import UIKit
         }
         return false;
     }
-    override func sendEvent(_ event: UIEvent) {
+    override public func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
         
         if(event.type == .touches && containsEndTouch(event)){

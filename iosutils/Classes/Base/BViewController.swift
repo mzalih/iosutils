@@ -1,10 +1,10 @@
 
 import UIKit
 
-class BViewController: UIViewController {
+public class BViewController: UIViewController {
 
       var refreshControl:UIRefreshControl? = nil;
-      override func viewDidLoad() {
+    override public func viewDidLoad() {
           super.viewDidLoad()
           setupHideKeyboardOnTap()
           MLog.track(self);
@@ -16,11 +16,11 @@ class BViewController: UIViewController {
 }
 extension BViewController{
 
-        @objc func refreshMessage()->NSMutableAttributedString{
+        @objc  public func refreshMessage()->NSMutableAttributedString{
             return "Pull to refresh ".toNSMutableAttributedString()
         }
         
-        func addRefresh(scrollView:UIScrollView?) {
+       public func addRefresh(scrollView:UIScrollView?) {
             if let scrollView = scrollView{
             if (self.refreshControl == nil){
                self.refreshControl = UIRefreshControl()
@@ -44,15 +44,15 @@ extension BViewController{
             }
             reload()
         }
-        @objc func reload(){
+        @objc public func reload(){
             
         }
-        static func show(vc:UIViewController,_ storyBoard:String ,_ viewName:String? = nil){
+       public static  func show(vc:UIViewController,_ storyBoard:String ,_ viewName:String? = nil){
             let nvc = getVC(storyBoard,viewName)
             vc.rootPushViewController(nvc, animated: true);
             
         }
-    static func setRootView(_ vc:UIViewController){
+   public static func setRootView(_ vc:UIViewController){
          UIApplication.shared.keyWindow?.rootViewController = vc
     }
 }

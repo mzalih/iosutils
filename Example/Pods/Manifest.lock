@@ -1,27 +1,16 @@
 PODS:
   - iosutils (0.1.0)
-  - Nimble (7.3.4)
-  - Quick (1.2.0)
 
 DEPENDENCIES:
   - iosutils (from `../`)
-  - Nimble (~> 7.0)
-  - Quick (~> 1.2.0)
-
-SPEC REPOS:
-  trunk:
-    - Nimble
-    - Quick
 
 EXTERNAL SOURCES:
   iosutils:
     :path: "../"
 
 SPEC CHECKSUMS:
-  iosutils: db877caa225f4a09cd2fab477999dee005dc61fe
-  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  iosutils: 5de61dcfe6d04dd860a33d8fb111760d2ac326be
 
-PODFILE CHECKSUM: a1bca52205a44cc45aa9c721baa6f1ee25c1630b
+PODFILE CHECKSUM: 7dd93b91907be1511f4a0929a9c1ff4e1a372e2d
 
 COCOAPODS: 1.8.4

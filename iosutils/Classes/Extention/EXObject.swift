@@ -1,6 +1,6 @@
 
 import UIKit
-extension NSObject{
+public extension NSObject{
     static func getVCName(_ vc:UIViewController? = getTopView())->String{
         if let obj = vc{
             return obj.getName()

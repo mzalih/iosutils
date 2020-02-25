@@ -1,6 +1,6 @@
 
 import UIKit
-extension NSDictionary{
+public extension NSDictionary{
     
     static  func getStringValue(_ data:Any,_ key:String)->String{
         if let dic  = data as? NSDictionary{

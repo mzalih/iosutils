@@ -1,7 +1,7 @@
 
 
 import Foundation
-extension NSPointerArray {
+public extension NSPointerArray {
     func addObject(_ object: AnyObject?) {
         guard let strongObject = object else { return }
 

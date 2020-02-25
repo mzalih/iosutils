@@ -1,5 +1,5 @@
 import UIKit
-class MLog: NSObject {
+public class MLog: NSObject {
     
     
     public static func add(_ event:String, _ message:String ,_ orgin:String  = MLog.getVCName()){

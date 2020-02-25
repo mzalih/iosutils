@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "summary": "A short description of iosutils.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/jerrydon/iosutils",
+  "homepage": "https://github.com/mzalih/iosutils",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "jerrydon": "salih@toobler.com"
+    "mzalih": "mzalih@gmail.com"
   },
   "source": {
-    "git": "https://github.com/jerrydon/iosutils.git",
+    "git": "https://github.com/mzalih/iosutils.git",
     "tag": "0.1.0"
   },
   "platforms": {

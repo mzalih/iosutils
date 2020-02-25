@@ -1,7 +1,11 @@
 use_frameworks!
-target 'iosutils_Tests' do
+
+target 'iosutils_Example' do
   pod 'iosutils', :path => '../'
-  
-  pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0'
+
+  target 'iosutils_Tests' do
+    inherit! :search_paths
+
+    
+  end
 end
