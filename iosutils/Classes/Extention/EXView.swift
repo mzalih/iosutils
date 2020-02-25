@@ -1,39 +1,10 @@
 
 import UIKit
-import SkeletonView
 extension UIView {
     func clickDelay(delayTime:Double){
         self.isUserInteractionEnabled = false
         delay(delayTime) {
             self.isUserInteractionEnabled = true
-        }
-    }
-    func fadeTransition(_ duration:CFTimeInterval) {
-        let animation = CATransition()
-        animation.timingFunction = CAMediaTimingFunction(name:
-            CAMediaTimingFunctionName.easeInEaseOut)
-        animation.type = CATransitionType.fade
-        animation.duration = duration
-        layer.add(animation, forKey: CATransitionType.fade.rawValue)
-    }
-    func showLoader(_ trans:Bool = false){
-        if(!trans){
-            Toast.showLoader(inView: self);
-        }else{
-            Toast.showTrLoader(inView: self);
-        }
-    }
-    func hideLoader(){
-        Toast.hideLoader(inView: self);
-    }
-    @objc func skelton(_ status:Bool = false){
-       
-        if(status){
-            Toast.showTrLoader(inView: self)
-            self.showAnimatedGradientSkeleton()
-        }else{
-            self.hideLoader()
-            self.hideSkeleton()
         }
     }
     @IBInspectable var cornerRadius: CGFloat {
@@ -104,7 +75,6 @@ extension UIView {
     shapeLayer.fillColor = UIColor.clear.cgColor
     shapeLayer.strokeColor = layer.borderColor
     shapeLayer.lineWidth = lineWidth
-    shapeLayer.lineJoin = CAShapeLayerLineJoin.round
     shapeLayer.lineDashPattern = lineDashPattern
     shapeLayer.path = UIBezierPath(roundedRect: shapeRect, cornerRadius: cornerRadius).cgPath
 

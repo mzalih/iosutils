@@ -24,8 +24,8 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/jerrydon/iosutils'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'jerrydon' => 'salih@toobler.com' }
-  s.source           = { :git => 'https://github.com/jerrydon/iosutils.git', :tag => s.version.to_s }
+  s.author           = { 'salih' => 'mzalih@gmail.com' }
+  s.source           = { :git => 'https://github.com/mzalih/iosutils.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

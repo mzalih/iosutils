@@ -4,7 +4,6 @@ import var CommonCrypto.CC_MD5_DIGEST_LENGTH
 import func CommonCrypto.CC_MD5
 import typealias CommonCrypto.CC_LONG
 import Photos
-import SDWebImage
 
 extension String{
     func replace(target: String, with: String) -> String {
@@ -78,7 +77,11 @@ extension String{
         
         var number: NSNumber!
         let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyAccounting
+        if #available(iOS 9.0, *) {
+            formatter.numberStyle = .currencyAccounting
+        } else {
+            // Fallback on earlier versions
+        }
         formatter.currencySymbol = ""
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
@@ -245,41 +248,6 @@ extension String{
          return self.replacingOccurrences(of: "(\\d{3})(\\d{3})(\\d+)", with: "($1) $2 $3", options: .regularExpression, range: nil)
     }
     
-    
-    func saveToPhone(video:Bool = false){
-        if let url = self.toUrl(){
-            if(video){
-                PHPhotoLibrary.shared().performChanges({
-                    PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: url)
-                }) { saved, error in
-                    if saved {
-                        Toast.snakbar("Media added to Library")
-                    }
-                }
-            }else{
-           
-                SDWebImageManager.shared.loadImage(with: url, options: SDWebImageOptions.init(), progress: nil) { (image, data, error, type, status, url) in
-                    if let snap  = image {
-                        PHPhotoLibrary.shared().performChanges({
-                            PHAssetChangeRequest.creationRequestForAsset(from: snap)
-                        }, completionHandler: { success, error in
-                            if success {
-                                // Saved successfully!
-                                DispatchQueue.main.async() {
-                                    // your UI update code
-                                   Toast.snakbar("Photo Saved")
-                                }
-                              
-                            }
-                           
-                        })
-                    }
-                    
-                }
-            }
-            
-        }
-    }
     
      func toNSMutableAttributedString() -> NSMutableAttributedString{
         return NSMutableAttributedString.init(string: self)

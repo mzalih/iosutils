@@ -23,7 +23,7 @@ extension NSMutableAttributedString{
             range = NSMakeRange(0, self.length)
         }
         if range!.location != NSNotFound {
-            addAttribute(NSAttributedString.Key.underlineStyle, value:NSUnderlineStyle.thick.rawValue, range: range!)
+            addAttribute(NSAttributedString.Key.underlineStyle, value:NSUnderlineStyle.styleThick.rawValue, range: range!)
             addAttribute(NSAttributedString.Key.underlineColor, value:color , range: range!)
         }
     }

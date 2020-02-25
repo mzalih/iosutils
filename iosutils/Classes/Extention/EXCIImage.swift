@@ -1,5 +1,9 @@
 
 import UIKit
+
+extension CIContext {
+    static let shared = CIContext(options: nil)
+}
 extension CIImage {
   func toUIImage() -> UIImage? {
     let context: CIContext = CIContext.init(options: nil)
@@ -19,10 +23,10 @@ func toCGImage() -> CGImage? {
 }
         var averageLuminance: Double {
             let vector = CIVector(cgRect: extent)
-            let filter = CIFilter(name: "CIAreaAverage", parameters: [kCIInputImageKey: self, kCIInputExtentKey: vector])!
+            let filter = CIFilter(name: "CIAreaAverage", withInputParameters: [kCIInputImageKey: self, kCIInputExtentKey: vector])!
             var bitmap = [UInt8](repeating: 0, count: 4)
 
-            CIContext.shared.render(filter.outputImage!, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: .RGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
+            CIContext.shared.render(filter.outputImage!, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: kCIFormatRGBA8, colorSpace: CGColorSpaceCreateDeviceRGB())
 
             let r = (Double(bitmap[0]) / 255) * 0.213
             let g = (Double(bitmap[1]) / 255) * 0.715

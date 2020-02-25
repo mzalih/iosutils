@@ -413,7 +413,7 @@ Apache License
 
 ## iosutils
 
-Copyright (c) 2020 jerrydon <salih@toobler.com>
+Copyright (c) 2020 salih <mzalih@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

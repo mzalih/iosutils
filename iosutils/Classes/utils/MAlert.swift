@@ -3,7 +3,7 @@ import UIKit
 class MAlert: NSObject {
 
 static func alert(title:String? = nil,text:String?) {
-    show([
+    alert([
         UIAlertAction(title: "Close", style: .default, handler: { action in
     })
      ],title:title,message:text)
@@ -17,7 +17,7 @@ static func alert(text:String,inView :UIViewController ,withResponse:@escaping R
 }
 static func alert(text:String,yes:String,no:String,inView :UIViewController ,withResponse:@escaping Response) {
 
-    show([
+    alert([
             UIAlertAction(title: yes, style: .default, handler: { action in
             withResponse(true,nil);
             }),
@@ -29,7 +29,7 @@ static func alert(text:String,yes:String,no:String,inView :UIViewController ,wit
 }
 
 static func alert(text:String, withDismissPage:Bool, inView :UIViewController? ) {
-    show([UIAlertAction(title: "OK", style: .default, handler: { action in
+    alert([UIAlertAction(title: "OK", style: .default, handler: { action in
             if(withDismissPage){
             inView?.navigationController?.popViewController(animated: true);
             }
@@ -52,7 +52,7 @@ static func alert(_ actions: [UIAlertAction], title:String? = nil, message:Strin
     inView?.present(actionSheetController, animated: true, completion: {
       
         UIView.animate(withDuration: 0.3, delay: 0.0, options:[], animations: {
-             actionSheetController.view.superview?.backgroundColor = MColor.primary
+            actionSheetController.view.superview?.backgroundColor = .black
         }, completion:nil)
     })
     
